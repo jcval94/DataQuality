@@ -1,17 +1,43 @@
 #Validity
 
 library(tidyverse)
-
-fact_as_string<-function(df){
-  f_a_s<-function(X){
-    if(class(X) %in% c("factor")){
-      X<-as.character(X)
-    }
-    X
-  }
-  purrr::map_df(df,~f_a_s(.x))
-}
-
+#' Title
+#'
+#' @param df 
+#' @param list_values 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' 
+#' fact_as_string<-function(df){
+#' f_a_s<-function(X){
+#'   if(class(X) %in% c("factor")){
+#'       X<-as.character(X)
+#'         }
+#'           X
+#'         }
+#'       purrr::map_df(df,~f_a_s(.x))
+#'      }
+#' 
+#' #Numeric: c(1,10) closed range 
+#' Rule<-list(c(1,10),NA,NA,NA,NA)
+#' Validity(df = iris,list_values = Rule)
+#' 
+#' #String/factor: c("setosa", "virginica", "magarita")
+#' #Possible
+#' Rule<-list(NA,NA,NA,NA,c("setosa","virginica","magarita"))
+#' Validity(df,Rule)
+#' 
+#' Rule<-list(NA,NA,NA,NA,c("setosa","virginica","versicolor","magarita"))
+#' Validity(df,Rule)
+#' #Multiple
+#' 
+#' Rule<-list(c(1,10),c(1,3),NA,NA,c("setosa","virginica","versicolor","magarita"))
+#' Validity(df = df,list_values = Rule)
+#' 
+#' 
 Validity<-function(df,list_values){
   df<-as_tibble(df)
   if(ncol(df)!=length(list_values)){
@@ -47,31 +73,3 @@ Validity<-function(df,list_values){
   return(Diagn)
   
 }
-
-#Example
-
-data(iris)
-
-
-
-
-#Numeric: c(1,10) closed range
-
-Rule<-list(c(1,10),NA,NA,NA,NA)
-Validity(df = iris,list_values = Rule)
-
-
-#String/factor: c("setosa", "virginica", "magarita")
-
-#Possible
-Rule<-list(NA,NA,NA,NA,c("setosa","virginica","magarita"))
-Validity(df,Rule)
-
-
-Rule<-list(NA,NA,NA,NA,c("setosa","virginica","versicolor","magarita"))
-Validity(df,Rule)
-
-#Multiple
-Rule<-list(c(1,10),c(1,3),NA,NA,c("setosa","virginica","versicolor","magarita"))
-Validity(df = df,list_values = Rule)
-
