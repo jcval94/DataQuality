@@ -1,17 +1,29 @@
-library(tidyverse)
-
-#check<-c("row","col","all")
-
-fact_as_string<-function(df){
-  f_a_s<-function(X){
-    if(class(X) %in% c("factor")){
-      X<-as.character(X)
-    }
-    X
-  }
-  purrr::map_df(df,~f_a_s(.x))
-}
-
+#' Title
+#'
+#' @param df 
+#' @param check 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' 
+#' library(tidyverse)
+#' #check<-c("row","col","all")
+#' fact_as_string<-function(df){
+#' f_a_s<-function(X){
+#'     if(class(X) %in% c("factor")){
+#'           X<-as.character(X)
+#'           }
+#'      X
+#'    }
+#'    purrr::map_df(df,~f_a_s(.x))
+#'  }
+#' 
+#' data(iris)
+#' Uniquenes(iris,check = "all")
+#' 
+#' 
 Uniquenes<-function(df,check="all"){
   
   if(!"data.frame" %in% class(df))
@@ -48,7 +60,3 @@ Uniquenes<-function(df,check="all"){
   }
   return(rt)
 }
-
-#Example
-data(iris)
-Uniquenes(iris,check = "all")
