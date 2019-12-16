@@ -1,7 +1,7 @@
 #' Title
 #'
-#' @param df 
-#' @param check 
+#' @param df data frame object
+#' @param check all, row or col, indicates the feature which will be analysed
 #'
 #' @return
 #' @export
