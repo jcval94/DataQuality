@@ -1,6 +1,6 @@
 #' Completeness is defined as expected comprehensiveness. Data can be complete even if optional data is missing.
 #'
-#' @param df 
+#' @param df data frame object
 #' @param list_na A list of boolean values which indicate if are NA are allowed for each column, where TRUE="Yes" and else FALSE ="No".
 #'
 #' @return
