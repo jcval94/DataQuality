@@ -1,15 +1,14 @@
-#Validity
-
-library(tidyverse)
 #' Title
 #'
 #' @param df 
 #' @param list_values 
 #'
 #' @return
-#' @export
+#' @export fact_as_string from DataQuality
 #'
 #' @examples
+#' 
+#' library(tidyverse)
 #' 
 #' fact_as_string<-function(df){
 #' f_a_s<-function(X){

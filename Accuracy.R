@@ -7,6 +7,8 @@
 #' @export
 #'
 #' @examples
+#' 
+#' 
 getRealData<-function(Search="Hello World!",Open=TRUE){
   #Accuracy
   #Degree to which data correctly reflects the real world object OR an event being described
